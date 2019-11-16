@@ -12,6 +12,9 @@ import (
 func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
+
+	scanner.Buffer([]byte(""), 10000000)
+
 	for scanner.Scan() {
 		prettyJson := pretty.Pretty(scanner.Bytes())
 
